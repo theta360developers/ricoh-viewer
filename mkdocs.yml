@@ -1,0 +1,6 @@
+site_name: Oppkey RICOH Viewer Demo Community Site
+# change to theta360developers before official publication
+site_url: https://codetricity.github.io/viewer-demo-docs
+theme:
+  name: material
+  
