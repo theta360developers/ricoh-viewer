@@ -3,4 +3,7 @@ site_name: Oppkey RICOH Viewer Demo Community Site
 site_url: https://codetricity.github.io/viewer-demo-docs
 theme:
   name: material
-  
+  # features:
+  #   - navigation.instant
+repo_name: git@github.com:codetricity/viewer-demo-docs.git
+
