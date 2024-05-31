@@ -5,13 +5,31 @@ for the UI that you embed the viewer in.
 
 
 This example uses  [Express](https://expressjs.com/) for the server.
-Let's say you create a route, `/content`.  The front-end application
-goes to `http://localhost:3000/content` and then Express will run
+Let's say you create two routes, `/viewer` and `/content`.  The
+first route to `/viewer` loads the React app that then
+loads the RICOH Viewer.  The React app will also load  content with
+a HTTP GET request to  `/content`.
+
+In the code example `views/viewer.ejs`, this snippet goes to the
+`/content` route.
+
+```typescript
+const res = await fetch("/content", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        });
+```
+
+When the app calls `/content`, Express will run
 a method that you created. In this example, the method is called
 `getContent()`.
 
+![browser process](images/structure/browser_process.png)
+
 Prior to actually getting the content, you must first generate a token.
-The method `getContent()` will first generate a token, then it will
+The function `getContent()` will first generate a token, then it will
 get the content from the RICOH360 Content API.  The token is put into
 the Authorization header.
 
@@ -370,4 +388,4 @@ viewer.start({
 ```
 - Viewer is Ricoh embedded viewer API
 - Viewer is initialized by specific a divId to inject the viewer UI into, an onFetchToken function for authorization and a CubeMapEnabled
-- Viewer is started with a contentID (call fetchContent() function to get contentIDs) and a transform value ie. "enhancement" or "undefined"
+- Viewer is started with a contentID (call `fetchContent()` function to get contentIDs) and a transform value ie. "enhancement" or "undefined"
