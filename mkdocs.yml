@@ -1,9 +1,9 @@
 site_name: Oppkey RICOH Viewer Demo Community Site
 # change to theta360developers before official publication
-site_url: https://codetricity.github.io/viewer-demo-docs
+site_url: https://codetricity.github.io/ricoh-viewer
 theme:
   name: material
   # features:
   #   - navigation.instant
-repo_name: git@github.com:codetricity/viewer-demo-docs.git
+repo_name: git@github.com:codetricity/ricoh-viewer.git
 
