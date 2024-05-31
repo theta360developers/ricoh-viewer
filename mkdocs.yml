@@ -13,6 +13,7 @@ repo_name: git@github.com:codetricity/ricoh-viewer.git
 
 nav:
   - Home: index.md
+  - Demo Overview: overview.md
   - Cloud: cloud.md
   - Features: features.md
   - Contact: contact.md
