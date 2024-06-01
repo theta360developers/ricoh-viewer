@@ -1,0 +1,5 @@
+kdf_iterations: 10000
+obfuscate: {}
+password:
+  OppkeySubarashii: 50d6b798d2db36ce3402f11eb34e7c914f00bd9506f928a6aef0612ca0a8e027;eb9789b56a437bf18844837744bc36e0;b02a45b0f43bbb4cf364753aff783dbc81fd845a51e6b379bca469ef40c8c46b
+userpass: {}
