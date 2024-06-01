@@ -19,3 +19,7 @@ nav:
   - Structure: structure.md
   - Contact: contact.md
 
+plugins:
+  - search
+  - encryptcontent:
+      global_password: 'OppkeySubarashii'
