@@ -324,13 +324,6 @@ const ui = {
       isHidden: false,
       label: "Home Position",
     },
-    liveStreamingControlButtons: {
-      isHidden: false,
-      startLabel: "Start Streaming",
-      stopLabel: "Stop Streaming",
-      speakerOnLabel: "Speaker On",
-      speakerOffLabel: "Speaker Off",
-    },
     zoomControlButtons: {
       isHidden: false,
       zoomInLabel: "Zoom In",
@@ -382,10 +375,12 @@ const viewer = new RICOH360Viewer({
 });
 
 viewer.start({
-  contentId: "6b004f76-60cf-4f14-ae3c-49b7dee4aca2",
+  contentId: "<Content ID from fetchContent>",
   transform: "enhancement",
 });
+
 ```
+
 - Viewer is Ricoh embedded viewer API
 - Viewer is initialized by specific a divId to inject the viewer UI into, an onFetchToken function for authorization and a CubeMapEnabled
 - Viewer is started with a contentID (call `fetchContent()` function to get contentIDs) and a transform value ie. "enhancement" or "undefined"
