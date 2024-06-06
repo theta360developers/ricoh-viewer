@@ -324,13 +324,6 @@ const ui = {
       isHidden: false,
       label: "Home Position",
     },
-    liveStreamingControlButtons: {
-      isHidden: false,
-      startLabel: "Start Streaming",
-      stopLabel: "Stop Streaming",
-      speakerOnLabel: "Speaker On",
-      speakerOffLabel: "Speaker Off",
-    },
     zoomControlButtons: {
       isHidden: false,
       zoomInLabel: "Zoom In",
