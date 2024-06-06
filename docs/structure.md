@@ -374,6 +374,11 @@ const viewer = new RICOH360Viewer({
   },
 });
 
+viewer.start({
+  contentId: "<Content ID from fetchContent>",
+  transform: "enhancement",
+});
+
 ```
 
 - Viewer is Ricoh embedded viewer API
