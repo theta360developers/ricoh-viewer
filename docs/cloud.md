@@ -7,13 +7,13 @@ your own server.
 
 Contact Oppkey for login to our public cloud site to browse around.
 
-## Deploy Your Own Public Site
+## Example to Deploy on Vercel
 
-If you wish to deploy your own site, refer to code on GitHub
-repository [oppkey-ricoh360-viewer-demo-with-login](https://github.com/codetricity/oppkey-ricoh360-viewer-demo-with-login) for an example showing how to deploy to Vercel with basic authentication
-login. The repo includes an example `vercel.json` file.
+The site above is deployed on Vercel. If you want to see the code we use
+for deployment as a reference, contact Oppkey for an example showing
+how to deploy to Vercel and protect the site with basic authentication login.
 
-For the example with login, the `secrets.env` needs to contain
+With login, the `secrets.env` needs to contain
 the `OPPKEY_VIEWER_PASSWORD` and `OPPKEY_VIEWER_USERNAME`
 environmental variable.
 
@@ -31,17 +31,15 @@ PRIVATE_KEY="<long private key for the viewer>"
 ```
 
 With the login example, the browser will open a sign in window.
-even when running locally.  You can change the credentials
+You can change the credentials
 in the `secrets.env` file for local testing.
 
 ![ login](images/cloud/login_credentials.png)
 
-We have the reference for basic authentication if people want to share the demo they
-build with their co-workers with a simple browser link.  This repository example includes deployment configuration
+The repository example includes deployment configuration
 to Vercel, free plan.  If you deploy to the public
 Vercel cloud, you must set the [environmental
-variables in Vercel](https://vercel.com/docs/projects/environment-variables). A free alternative to Vercel is 
-Netlify.  
+variables in Vercel](https://vercel.com/docs/projects/environment-variables). A free alternative to Vercel is Netlify.  
 
 ### example vercel.json
 
