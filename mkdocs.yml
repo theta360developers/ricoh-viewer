@@ -23,3 +23,12 @@ plugins:
   - search
   - encryptcontent:
       global_password: 'OppkeySubarashii'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

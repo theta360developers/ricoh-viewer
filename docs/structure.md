@@ -3,7 +3,6 @@
 To use the viewer, build a simple server to provide routes
 for the UI that you embed the viewer in.
 
-
 This example uses  [Express](https://expressjs.com/) for the server.
 Let's say you create two routes, `/viewer` and `/content`.  The
 first route to `/viewer` loads the React app that then
@@ -33,11 +32,9 @@ The function `getContent()` will first generate a token, then it will
 get the content from the RICOH360 Content API.  The token is put into
 the Authorization header.
 
-
-
 The example below uses the JavaScript [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) package.
 
-```
+```typescript
 fetch("https://api.ricoh360.com/contents", {
     method: "GET",
     headers: {
@@ -46,11 +43,9 @@ fetch("https://api.ricoh360.com/contents", {
   });
 ```
 
-
-
 - **views/**: Folder that holds view/HTML files (EJS markdown files)
-    - **index.ejs**: Home/landing page template
-    - **viewer.ejs**: Viewer page template
+  - **index.ejs**: Home/landing page template
+  - **viewer.ejs**: Viewer page template
 - **index.js**: File where server side functions and API endpoints to these functions are held
 
 ## Tokens
@@ -136,21 +131,20 @@ const getContent = async () => {
 };
 ```
 
-- This function takes your clientID and clientSecret, turns it into base64 string format and sends a post request to https://saas-prod.auth.us-west-2.amazoncognito.com/oauth2/token (set as tokenEndpoint) to get a token to use for Ricoh content API
+- This function takes your clientID and clientSecret, turns it into base64 string format and sends a post request to `https://saas-prod.auth.us-west-2.amazoncognito.com/oauth2/token` (set as tokenEndpoint) to get a token to use for Ricoh content API
 - After getting the token response, it creates another post request to Ricoh content API with the token as authorization and returning the data
 
 ## Server-side endpoints
 
 ### /
 
-```
+```typescript
 app.get("/", (req, res) => {
   res.render("index");
 });
 ```
 
 This endpoint returns the EJS template file (index.ejs) in ./views
-
 
 ### /viewer
 
@@ -159,6 +153,7 @@ app.get("/viewer", (req, res) => {
   res.render("viewer");
 });
 ```
+
 Calls up the main viewer with the split view, transformations, and
 content.
 
@@ -171,7 +166,7 @@ app.get("/token", (req, res) => {
 });
 ```
 
-This endpoint calls on the createToken() server-side function and returns the token
+This endpoint calls on the `createToken()` server-side function and returns the token
 
 ### /content
 
@@ -182,7 +177,7 @@ app.get("/content", async (req, res) => {
 });
 ```
 
-This endpoint calls on the getContent() async function and returns the content data which is needed by the viewer.
+This endpoint calls on the `getContent()` async function and returns the content data which is needed by the viewer.
 
 ## Client-side (in ./views/index.ejs)
 
@@ -309,6 +304,11 @@ const ui = {
       isHidden: false,
       enterLabel: "Enter Cropping",
       exitLabel: "Exit Cropping",
+    },
+    annotationButton: {
+      isHidden: false,
+      enterLabel: "Use keyboard to annotate",
+      exitLabel: "Exit keyboard annotation",
     },
     drawingButton: {
       isHidden: false,

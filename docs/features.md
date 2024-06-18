@@ -24,13 +24,29 @@ Navigation controls at bottom of screen allow viewer to select Zoom In, Zoom Out
 
 ![navigation panel](images/features/nav_panel.png)
 
-## Annotation
+## Drawing
+
+Drawings move with the image when the viewer is moved.  There
+are an eraser, different color pens, and different line thicknesses.
 
 ![annotate menu](images/features/annotate_menu.png)
 
 Written notes and simple drawings appear in viewer.
 
 ![annotate](images/features/annotate.png)
+
+## Annotation
+
+You can use the keyboard to input an annotation and place
+a rounded squarish icon in the scene that tells people that
+there is more information available.  
+
+![edit annotation](images/features/text_annotation.png)
+
+Selecting the icon
+will display the information on the picture.
+
+![hotspot annotation](images/features/annotate_hot_spot.png)
 
 ## Cropping
 
