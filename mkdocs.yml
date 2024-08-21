@@ -1,6 +1,6 @@
 site_name: Oppkey RICOH Viewer Demo
 # change to theta360developers before official publication
-site_url: https://codetricity.github.io/ricoh-viewer
+site_url: https://theta360developers.github.io/ricoh-viewer
 site_author: Oppkey
 
 theme:
@@ -21,8 +21,8 @@ nav:
 
 plugins:
   - search
-  - encryptcontent:
-      global_password: 'OppkeySubarashii'
+#  - encryptcontent:
+#      global_password: 'OppkeySubarashii'
 
 markdown_extensions:
   - pymdownx.highlight:
