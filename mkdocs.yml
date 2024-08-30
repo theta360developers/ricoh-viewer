@@ -9,7 +9,7 @@ theme:
   #   - navigation.instant
   logo: images/oppkey_logo.jpg
   favicon: images/oppkey_logo.jpg
-repo_name: git@github.com:codetricity/ricoh-viewer.git
+repo_name: git@github.com:theta360developers/ricoh-viewer.git
 
 nav:
   - Home: index.md
