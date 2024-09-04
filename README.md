@@ -2,12 +2,12 @@
 
 Using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/).
 
-Live site is [here](https://codetricity.github.io/ricoh-viewer/)
+Live site is [here](https://theta360developers.github.io/ricoh-viewer/)
 
 ## Deployment
 
 There is a GitHub Action that will automatically deploy the
-page to https://codetricity.github.io/ricoh-viewer/ when you
+page to <https://theta360developers.github.io/ricoh-viewer> when you
 push to the main branch.
 
 ## Other
