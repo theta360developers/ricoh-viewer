@@ -46,9 +46,10 @@ const accessToken = jwt.sign(payload, privatekey, {
 The token for the viewer is not the same as the token generated for the RICOH360 Platform Content API.
 
 ---
+
 ## Step 3
 
-### Generate Token for RICOH360 Platform API
+### Generate Token for RICOH360 Cloud API
 
 ```javascript
 const tokenEndpoint =

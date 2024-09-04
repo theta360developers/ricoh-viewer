@@ -20,8 +20,6 @@ nav:
 
 plugins:
   - search
-#  - encryptcontent:
-#      global_password: 'OppkeySubarashii'
 
 markdown_extensions:
   - pymdownx.highlight:
