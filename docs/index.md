@@ -20,8 +20,8 @@ password for the partner technical documentation.
 1. create a `secrets.env` file in the project root. The file has this format:
 
 ```text
-CLIENT_ID=<Your unique client id from RICOH for the platform API>
-CLIENT_SECRET=<client secret for your client id for the platform API>
+CLIENT_ID=<Your unique client id from RICOH Cloud API>
+CLIENT_SECRET=<client secret for your client id for RICOH CLOUD API>
 PRIVATE_KEY="<long private key for the viewer>"
 ```
 

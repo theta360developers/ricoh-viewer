@@ -25,8 +25,8 @@ We will need to get authorization to send you the example file.
 OPPKEY_VIEWER_PASSWORD=ChangeMe
 OPPKEY_VIEWER_USERNAME=devuser
 SESSION_SECRET=93qBc2janrrGcwvOxIEth3RFgf31Cg0K
-CLIENT_ID=<Your unique client id from RICOH for the platform API>
-CLIENT_SECRET=<client secret for your client id for the platform API>
+CLIENT_ID=<Your unique client id from RICOH Cloud API>
+CLIENT_SECRET=<client secret for your client id for RICOH Cloud API>
 PRIVATE_KEY="<long private key for the viewer>"
 ```
 
