@@ -14,7 +14,7 @@ password for the partner technical documentation.
 
 ## Installation and Setup
 
-1. clone down repo [oppkey-ricoh-viewer-demo-basic](https://github.com/codetricity/oppkey-ricoh-viewer-demo-basic)
+1. clone down repo [oppkey-ricoh-viewer-demo-basic](https://github.com/theta360developers/oppkey-ricoh-viewer-demo-basic)
 1. Install [Node.js](https://nodejs.org/en) - Note that Oppkey uses [nvm](https://github.com/nvm-sh/nvm) to manage node versions.  However, it may be simpler for you to install node straight from the node site.
 1. In the root directory of the project, run `npm install`
 1. create a `secrets.env` file in the project root. The file has this format:

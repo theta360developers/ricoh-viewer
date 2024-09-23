@@ -30,7 +30,7 @@ Developer builds a business application with login for their customers or staff 
 ### Loading View in HTML
 
 ```javascript
-<script src="https://r360pf-prod-static.s3.us-west-2.amazonaws.com/viewer/v0.11.1/ricoh360-viewer.js">
+<script src="https://r360pf-prod-static.s3.us-west-2.amazonaws.com/viewer/v0.15.0/ricoh360-viewer.js">
 </script>
 ```
 
