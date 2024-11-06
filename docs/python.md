@@ -77,3 +77,49 @@ onSelected: (index) => {
 }
 );
 ```
+
+## Image Selection Demo
+
+The left pane is index 0.  The right pane is index 1.
+
+![gui demo](images/python/python_gui.png)
+
+This is an example creating the list of image for selection.
+The `contentId` and `thumbnail_url` are parsed in JavaScript from the data sent
+from Python.
+
+In actual use, you may want to parse the data from the RICOH Cloud API
+in the Python server-side code in order to improve performance and reduce
+the data transmitted over the network.
+
+```javascript
+ const leftList = document.getElementById("leftList");
+    for (let i = 0; i < data.length; i++) {
+    if (data[i].status === "uploaded") {
+        // console.log(data[i]);
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `<div class="p-1">
+        <img style="cursor: pointer;" src="${
+            data[i].thumbnail_url
+        }" onclick="viewer.switchScene({ contentId: '${
+        data[i].content_id
+        }'},${0})">
+        <button type="button" class = "btn btn-primary mt-1" onclick="viewer.switchScene({ contentId: '${
+            data[i].content_id
+        }',transform:'enhancement'},${0})">
+            Enhance
+        </button>
+        <button type="button" class = "btn btn-primary mt-1" onclick="viewer.switchScene({ contentId: '${
+            data[i].content_id
+        }',transform:'b_person'},${0})">
+            Blur People
+        </button>
+        <button type="button" class = "btn btn-primary mt-1" onclick="viewer.switchScene({ contentId: '${
+            data[i].content_id
+        }',transform:'p_cubic'},${0})">
+            Cubic View
+        </button>
+        </div>`;
+        leftList.append(listItem);
+    }
+```
