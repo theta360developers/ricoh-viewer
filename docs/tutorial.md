@@ -82,6 +82,17 @@ At this stage, the `views/index.html` file looks like this.
 
 The viewer can't be instantiated because it needs a token.
 
+## secrets.env
+
+Using the following information obtained from RICOH, create
+a `secrets.env` file.
+
+1. Client ID
+1. Client Secrete
+1. Private Key
+
+![secrets](images/tutorial/secrets.png)
+
 ## Python file
 
 Create a new python file in the same directory called `server.py` in the
@@ -90,3 +101,46 @@ the `index.html` file.
 
 ![file structure](images/tutorial/file_structure_1.png)
 
+Create virtual environment.
+
+`python -m venv venv`
+
+Install dependencies.
+
+`pip install PyJWT Flask python-dotenv requests`
+
+Add skeleton flask server code.
+
+```python
+from flask import Flask, render_template
+import jwt
+import os
+from dotenv import load_dotenv
+
+load_dotenv("secrets.env")
+
+app = Flask(__name__)
+app.template_folder = "views"
+app.static_folder = "public"
+
+# Retrieve environment variables
+PRIVATE_KEY = os.getenv("PRIVATE_KEY")
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+
+
+@app.route("/")
+def minimum():
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(port=3000, debug=True)
+    print("Open browser at http://localhost:3000 or http://127.0.0.1:3000")
+    
+```
+
+At this stage, if you open the browser, you will just have a black screen.  You won't be able to see the image because you still need to
+pass the viewer the `token` and the `contentId`
+
+![bare web page](images/tutorial/bare_web_page.png)
