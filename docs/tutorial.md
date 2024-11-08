@@ -130,7 +130,7 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 
 @app.route("/")
-def minimum():
+def index():
     return render_template("index.html")
 
 
@@ -144,3 +144,33 @@ At this stage, if you open the browser, you will just have a black screen.  You 
 pass the viewer the `token` and the `contentId`
 
 ![bare web page](images/tutorial/bare_web_page.png)
+
+### creating the token for the RICOH360 Viewer
+
+Install `cryptography` to generate token.
+
+`pip install cryptography`
+
+Create the method `create_token` above the route.
+
+```python
+
+def create_token():
+    payload = {"client_id": CLIENT_ID}
+    token = jwt.encode(payload, PRIVATE_KEY, algorithm="RS256")
+    # Decode to UTF-8 if necessary
+
+    return token if isinstance(token, str) else token.decode("utf-8")
+```
+
+Pass the token to the HTML page.
+
+```python
+@app.route("/")
+def index():
+    token = create_token()
+    return render_template("index.html",  token=token)
+```
+
+### accessing content
+
