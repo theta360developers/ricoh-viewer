@@ -1,8 +1,18 @@
 # RICOH360 Viewer Tutorial
 
+This tutorial takes you from a blank file to the point
+where you can display an image in a web browser.
+
+There are two components: front-end and back-end.
+
+| component | name | function |
+| --- | ---- | ---- |
+| front-end | index.html | load RICOH360 Viewer |
+| back-end | server.py | send content to viewer and handle security |
+
 Tutorial [code on GitHub](https://github.com/theta360developers/oppkey-ricoh-viewer-demo-basic/tree/main/tutorial)
 
-## HTML File
+## front-end HTML File
 
 Create a barebones HTML file called `index.html`.  Move the file to a sub-folder called, `views`.
 
@@ -95,7 +105,7 @@ a `secrets.env` file.
 
 ![secrets](images/tutorial/secrets.png)
 
-## Python file
+## back-end Python file
 
 Create a new python file in the same directory called `server.py` in the
 same directory as the `views` folder.  It is one level higher than
@@ -249,7 +259,7 @@ def index():
     return render_template("index.html",  token=token, contentId=contentId)
 ```
 
-### completed Python code listing
+### completed back-end Python code listing
 
 ```python
 from flask import Flask, render_template
@@ -323,7 +333,7 @@ if __name__ == "__main__":
     print("Open browser at http://localhost:3000 or http://127.0.0.1:3000")
 ```
 
-### display content in viewer
+### front-end: display content in viewer
 
 In `index.html`.
 
@@ -335,7 +345,7 @@ In `index.html`.
 
 ![image display](images/tutorial/image_display.png)
 
-### completed index.html
+### completed front-end index.html
 
 ```html
 <!DOCTYPE html>
