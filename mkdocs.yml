@@ -18,6 +18,7 @@ nav:
   - Structure: structure.md
   - Contact: contact.md
   - Python Flask: python.md
+  - Tutorial: tutorial.md
 
 plugins:
   - search
