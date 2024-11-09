@@ -424,3 +424,59 @@ In `index.html`.
 Tip: Add the ui object into the viewer at time of instantiation.
 
 ![button challenge](images/tutorial/button_challenge.png)
+
+The split pane button will work.
+
+![split pane](images/tutorial/split-pane.png)
+
+Solution is in the tutorial folder in `button-challenge.html`.
+
+### simple list of content
+
+We're passing a single image contentId into the HTML.
+Modifer the code to show a simple list.
+
+![simple list](images/tutorial/simple-list.png)
+
+In the server Python file
+
+```python
+
+# Function to query content from the RICOH360 API
+def get_content():
+    cloud_content_token = get_token_for_cloud_content()
+    # Fetch content using the token
+    content_headers = {"Authorization": f"Bearer {cloud_content_token}"}
+    content_response = requests.get(
+        "https://api.ricoh360.com/contents?limit=10", headers=content_headers
+    )
+    content_data = content_response.json()
+    return content_data
+
+@app.route("/")
+def index():
+    token = create_token()
+    content_data = get_content()
+    contentIds = []
+    for single_content in content_data:
+        contentIds.append(single_content["content_id"])
+    return render_template("simple-list-challenge.html",  token=token, contentIds=contentIds)
+```
+
+in the HTML file
+
+```html
+...
+...
+  viewer.start({
+    contentId: "{{contentIds[0]}}"
+  });
+</script>
+
+{% for contentId in contentIds %}
+<button onclick="viewer.switchScene({ contentId: '{{contentId}}'})"> {{ loop.index }}</button>
+{% endfor %}
+```
+
+Solution in the tutorial folder on GitHub.
+
