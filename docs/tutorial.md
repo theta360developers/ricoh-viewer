@@ -10,6 +10,15 @@ There are two components: front-end and back-end.
 | front-end | index.html | load RICOH360 Viewer |
 | back-end | server.py | send content to viewer and handle security |
 
+The suggested way to use this tutorial is to start with a blank file using
+an editor like VSCode.  Type in all the code snippets one section at a time.
+For each section, take a moment to understand the functionality.  For example,
+one section is on token creation for the RICOH360 Viewer.  Another section is
+on token creation for the RICOH360 Cloud API.  
+
+If you get stuck, you can refer to the completed code on GitHub or copy and
+paste the snippet into your own application.
+
 Tutorial [code on GitHub](https://github.com/theta360developers/oppkey-ricoh-viewer-demo-basic/tree/main/tutorial)
 
 ## front-end HTML File
@@ -404,3 +413,4 @@ In `index.html`.
 </body>
 </html>
 ```
+
