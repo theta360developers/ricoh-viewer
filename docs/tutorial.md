@@ -205,6 +205,8 @@ Run the server and test it again to make sure the token is being created.
 
 As a challenge, display the token on  your HTML page using this syntax `{{name_of_token_variable}}`
 
+![viewer token challenge](images/tutorial/viewer_token.png)
+
 ### accessing content
 
 To get the content, you first need to generate a token
