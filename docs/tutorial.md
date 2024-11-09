@@ -14,7 +14,7 @@ Tutorial [code on GitHub](https://github.com/theta360developers/oppkey-ricoh-vie
 
 ## front-end HTML File
 
-Create a barebones HTML file called `index.html`.  Move the file to a sub-folder called, `views`.
+Create a barebones HTML file called `index.html`.
 
 ```html
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ Flask.
 </script>
 ```
 
-At this stage, the `views/index.html` file looks like this.
+At this stage, the `index.html` file looks like this.
 
 ```html
 <!DOCTYPE html>
@@ -108,14 +108,19 @@ a `secrets.env` file.
 ## back-end Python file
 
 Create a new python file in the same directory called `server.py` in the
-same directory as the `views` folder.  It is one level higher than
-the `index.html` file.
-
-![file structure](images/tutorial/file_structure_1.png)
+same directory as the `index.html` file.
 
 Create virtual environment.
 
 `python -m venv venv`
+
+Activate virtual environment.
+
+`source venv/bin/activate`
+
+The file structure will look like this.
+
+![file structure](images/tutorial/file_structure_1.png)
 
 Install dependencies.
 
@@ -132,8 +137,7 @@ from dotenv import load_dotenv
 load_dotenv("secrets.env")
 
 app = Flask(__name__)
-app.template_folder = "views"
-app.static_folder = "public"
+app.template_folder = "."
 
 # Retrieve environment variables
 PRIVATE_KEY = os.getenv("PRIVATE_KEY")
@@ -154,6 +158,17 @@ if __name__ == "__main__":
 
 At this stage, if you open the browser, you will just have a black screen.  You won't be able to see the image because you still need to
 pass the viewer the `token` and the `contentId`
+
+You can test the server with:
+
+```text
+python server.py
+* Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:3000
+Press CTRL+C to quit
+```
 
 ![bare web page](images/tutorial/bare_web_page.png)
 
@@ -183,6 +198,12 @@ def index():
     token = create_token()
     return render_template("index.html",  token=token)
 ```
+
+Run the server and test it again to make sure the token is being created.
+
+### token display challenge
+
+As a challenge, display the token on  your HTML page using this syntax `{{name_of_token_variable}}`
 
 ### accessing content
 
