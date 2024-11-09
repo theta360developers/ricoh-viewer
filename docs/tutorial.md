@@ -272,6 +272,9 @@ def get_content():
 
 #### parse content_id and send to HTML template
 
+In the return line, make sure you had `contentId=contentId` to the
+variables sent to the `index.html` file.
+
 ```python
 @app.route("/")
 def index():
