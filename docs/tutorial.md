@@ -480,3 +480,61 @@ in the HTML file
 
 Solution in the tutorial folder on GitHub.
 
+### content list as thumbnail with enhancement
+
+The content from the RICOH360 Cloud has a URL for a thumbnail.
+The thumbnails are useful to select images.
+
+![transform](images/tutorial/transform-screenshot.png)
+
+Modify the Python server to send a list of thumbnail URLs to the HTML file.
+
+```python
+@app.route("/")
+def index():
+    token = create_token()
+    content_data = get_content()
+    thumburls = []
+
+    contentIds = []
+    for single_content in content_data:
+        contentIds.append(single_content["content_id"])
+        thumburls.append(single_content["thumbnail_url"])
+    return render_template("list-with-transform.html",
+                           token=token,
+                           contentIds=contentIds,
+                           thumburls=thumburls
+                           )
+```
+
+In the HTML file, the listing is built up from the thumbnail URLs.
+
+```django
+  {% for contentId in contentIds %}
+  <img onclick="switchViewerImage('{{contentId}}')" src="{{thumburls[loop.index -1]}}" alt="thumbnail"
+  style="width:80px;height: 40px;">
+  {% endfor %}
+```
+
+Example to switch the scene.
+
+```javascript
+const switchViewerImage = async (contentId) => {
+    document.getElementById("currentContentId").innerHTML = contentId;
+    const buttonElement = `<button onclick="enhanceRightImage('${contentId}')"> enhance right </button>`; 
+    document.getElementById("rightEnhanceButton").innerHTML = buttonElement;
+
+    const switchRightButtonElement = `<button onclick="switchRightImage('${contentId}')"> sync right </button>`;
+    document.getElementById("rightSwitchButton").innerHTML = switchRightButtonElement;
+
+    console.log("contentId for left pane: ", contentId);
+  
+    await viewer.switchScene(
+        {
+            contentId: contentId,
+        }
+    );
+}
+```
+
+Full working example in the tutorial folder.
