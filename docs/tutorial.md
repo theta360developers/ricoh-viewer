@@ -14,7 +14,8 @@ The suggested way to use this tutorial is to start with a blank file using
 an editor like VSCode.  Type in all the code snippets one section at a time.
 For each section, take a moment to understand the functionality.  For example,
 one section is on token creation for the RICOH360 Viewer.  Another section is
-on token creation for the RICOH360 Cloud API.  
+on token creation for the RICOH360 Cloud API. The two tokens are different
+and use different token generation technologies.
 
 If you get stuck, you can refer to the completed code on GitHub or copy and
 paste the snippet into your own application.
@@ -414,3 +415,12 @@ In `index.html`.
 </html>
 ```
 
+## Additional Challenges
+
+### insert additional UI buttons in the viewer
+
+[reference code](https://github.com/theta360developers/oppkey-ricoh-viewer-demo-basic/blob/107e30e0c97074afc357a9e503dbe9f47b74d331/views/flask_viewer.html#L69)
+
+Tip: Add the ui object into the viewer at time of instantiation.
+
+![button challenge](images/tutorial/button_challenge.png)
