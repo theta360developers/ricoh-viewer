@@ -263,3 +263,150 @@ You should see this output on the console.
 Get content_id from data
 c6eac34b-9bdc-4ba1-81af-29470fdead79
 ```
+
+## HTML File
+
+Now that we have the `contentId` and the viewer `token`, we
+can now create the HTML file that will hold the browser.
+
+In a new index.html file, put the following code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://r360pf-prod-static.s3.us-west-2.amazonaws.com/viewer/v0.15.0/ricoh360-viewer.js"></script>
+  </head>
+  <body>
+    <div
+      style="
+        position: relative;
+        width: 100%;
+        height: 650px;
+        background-color: #2a303c;
+      "
+    >
+      <div id="viewer"></div>
+    </div>
+    <script>
+      const viewer = new RICOH360Viewer({
+        divId: "viewer",
+        onFetchToken: () => "{{token}}",
+      });
+      viewer.start({
+        contentId: "{{contentId}}",
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Connect `server.py` and `index.html`
+
+We just need to connect the backend `server.py` file
+with the frontend `index.html` file.  To connect
+the files, we will use Flask.
+
+`pip install Flask`
+
+In the `server.py` file, import the Flask packages.
+
+`from flask import Flask, render_template`
+
+Specify how to start Flask and let the application know
+that the `index.html` file is in the same folder as the `server.py`
+file.
+
+Below the section where you specified `CLIENT_SECRET`.
+
+```python
+app = Flask(__name__)
+app.template_folder = "."
+```
+
+### route to `index.html`
+
+At the bottom of your file, add the route to `index.html`
+
+```python
+@app.route("/")
+def index():
+    print(f"contentId: {content_id}")
+    return render_template("index.html",  token=token, contentId=content_id)
+```
+
+### start flask server
+
+At the bottom of `server.py`, add this:
+
+```python
+app.run(port=3000, debug=True)
+print("Open browser at http://localhost:3000 or http://127.0.0.1:3000")
+```
+
+## run application
+
+`python server.py`
+
+![open browser console](images/tutorial2/open_browser.png)
+
+![browser](images/tutorial2/browser.png)
+
+Congratulations!  You have now configured the RICOH360 Viewer.
+
+Please see the other tutorials for customization of the browser
+and connection with the powerful RICOH360 Cloud APIs.
+
+## bonus challenges
+
+### change image
+
+First, load multiple images into your RICOH360 Cloud account.
+
+In `server.py` file, change the number of images you get from the
+RICOH360 Cloud server from 1 to 5.
+
+```python
+content_response = requests.get(
+    "https://api.ricoh360.com/contents?limit=5", headers=content_headers
+)
+```
+
+When you get the `content_id`, change the index of the content from 0 to 1.
+
+```python
+content_id = content_data[1]["content_id"]
+```
+
+reload browser.
+
+You should see the next image.
+
+![browser image 2](images/tutorial2/browser_image2.png)
+
+Change the index to 2.
+
+```python
+content_id = content_data[2]["content_id"]
+```
+
+Reload the browser to see the next image.
+
+![image 3](images/tutorial2/browser_image_3.png)
+
+### enhance image
+
+In `index.html`, apply `transform: 'enhancement'` below
+the contentId.
+
+```javascript
+viewer.start({
+  contentId: "{{contentId}}",
+  transform: 'enhancement'
+});
+```
+
+The image is now enhanced.
+
+![enhancement](images/tutorial2/enhancement.png)
