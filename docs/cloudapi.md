@@ -6,12 +6,28 @@ The RICOH360 Viewer uses the RICOH360 Cloud API.
 All the demonstrations use the content API to get a list
 of images with their associated content_id.
 
-Although the transformations such as enhancement are
-in the viewer API, other transforms may require direct calls
-to the Cloud API.
+This is an example of using the RICOH360 Cloud API to get
+a listing of
+40 images.  In the example below, `get_token_for_cloud_content()` is
+a method that I made to access Amazon Cognito to get a RICOH360
+Cloud token.
+
+```python
+# Function to query content from the RICOH360 API
+def get_content():
+    get_token_for_cloud_content()
+    cloud_content_token = session["ricoh_cloud_token"]
+    # Fetch content using the token
+    content_headers = {"Authorization": f"Bearer {cloud_content_token}"}
+    content_response = requests.get(
+        "https://api.ricoh360.com/contents?limit=40", headers=content_headers
+    )
+    content_data = content_response.json()
+    return content_data
+```
 
 When using the RICOH360 Viewer to do the transform, you
-add the name of the enhancement after the property `transform`.
+add the name of the transform, `enhancement`, after the property `transform`.
 
 ```javascript
 viewer.switchScene(
@@ -21,6 +37,14 @@ viewer.switchScene(
     }, "1"
 )
 ```
+
+Once the RICOH360 Viewer is set up, the API is nice and easy.
+You can see from the example above, that the transform and placement
+of the image to the right pane, index 1, is very easy.
+
+Although the transformations such as enhancement are
+in the viewer API, other transforms may require direct calls
+to the Cloud API.
 
 You can also do transforms that are not available through the
 viewer.
