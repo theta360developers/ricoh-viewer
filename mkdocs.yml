@@ -19,6 +19,7 @@ nav:
   - Contact: contact.md
   - Python Flask: python.md
   - Tutorial: tutorial.md
+  - RICOH360 Cloud API: cloudapi.md
 
 plugins:
   - search
