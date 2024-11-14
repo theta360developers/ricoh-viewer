@@ -213,6 +213,11 @@ viewer.start({
 });
 ```
 
+Now that goal of the Python server code is top in your mind,
+let's move back to our Python file and focus on achieving
+the goal of getting a `contentId` that we can pass to the
+viewer in the `index.html` file.
+
 Add this code to the bottom of your `server.py` file.
 
 ```python linenums="60" title="server.py"
@@ -271,7 +276,7 @@ can now create the HTML file that will hold the browser.
 
 In a new index.html file, put the following code:
 
-```html
+```html title="index.html" linenums="1"
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -312,7 +317,9 @@ the files, we will use Flask.
 
 In the `server.py` file, import the Flask packages.
 
-`from flask import Flask, render_template`
+```python title="server.py" linenums="1"
+from flask import Flask, render_template
+```
 
 Specify how to start Flask and let the application know
 that the `index.html` file is in the same folder as the `server.py`
@@ -320,16 +327,16 @@ file.
 
 Below the section where you specified `CLIENT_SECRET`.
 
-```python
+```python title="server.py"
 app = Flask(__name__)
 app.template_folder = "."
 ```
 
-### route to `index.html`
+### in `server.py` create route to `index.html`
 
-At the bottom of your file, add the route to `index.html`
+At the bottom of your `server.py` file, add the route to `index.html`
 
-```python
+```python title="server.py"
 @app.route("/")
 def index():
     print(f"contentId: {content_id}")
@@ -340,7 +347,7 @@ def index():
 
 At the bottom of `server.py`, add this:
 
-```python
+```python title="server.py"
 app.run(port=3000, debug=True)
 print("Open browser at http://localhost:3000 or http://127.0.0.1:3000")
 ```
@@ -416,7 +423,9 @@ The image is now enhanced.
 Set up a constant for the viewer ui.  In the toolbar,
 add the annotation button.
 
-```javascript
+Place the `ui` constant after the `onFetchToken` callback.
+
+```javascript linenums="21" hl_lines="11"
 const ui = {
   toolbar: {
     annotationButton: {
@@ -452,7 +461,7 @@ const ui = {
 
 ### split-screen
 
-The split-screen control is in the `verticalPanel`. 
+The split-screen control is in the `verticalPanel`.
 
 ```javascript
 const ui = {
