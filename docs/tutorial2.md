@@ -410,3 +410,98 @@ viewer.start({
 The image is now enhanced.
 
 ![enhancement](images/tutorial2/enhancement.png)
+
+### annotation
+
+Set up a constant for the viewer ui.  In the toolbar,
+add the annotation button.
+
+```javascript
+const ui = {
+  toolbar: {
+    annotationButton: {
+      isHidden: false
+    }
+  }
+}
+const viewer = new RICOH360Viewer({
+  divId: "viewer",
+  onFetchToken: () => "{{token}}",
+  ui
+});
+```
+
+![annotation](images/tutorial2/annotation.png)
+
+### drawing
+
+```javascript
+const ui = {
+  toolbar: {
+    annotationButton: {
+      isHidden: false
+    },
+    drawingButton: {
+      isHidden: false
+    }
+  }
+}
+```
+
+![drawing](images/tutorial2/drawing.png)
+
+### split-screen
+
+The split-screen control is in the `verticalPanel`. 
+
+```javascript
+const ui = {
+  toolbar: {
+    annotationButton: {
+      isHidden: false
+    },
+    drawingButton: {
+      isHidden: false
+    }
+  },
+  verticalPanel: {
+    isHidden: false,
+    topMargin: 25,
+  }
+}
+```
+
+![split-screen](images/tutorial2/split-screen.png)
+
+### control of right pane
+
+![right pane enhance](images/tutorial2/right-pane-enhance.png)
+
+1. create a function to switch scene
+1. in the function, add the pane "1", which is the right pane
+1. create a button to run the function to switch the scene
+
+```javascript
+const viewer = new RICOH360Viewer({
+    divId: "viewer",
+    onFetchToken: () => "{{token}}",
+    ui
+  });
+viewer.start({
+  contentId: "{{contentId}}",
+});
+const enhanceRightPane = () => {
+  viewer.switchScene(
+  {
+    contentId: "{{contentId}}",
+    transform: 'enhancement'
+  }, "1"
+  );
+}
+```
+
+Below the viewer, add this:
+
+```html
+<button type="button" onclick="enhanceRightPane()">enhance right</button>
+```
