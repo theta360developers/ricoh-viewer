@@ -4,8 +4,8 @@ site_author: Oppkey
 
 theme:
   name: material
-  # features:
-  #   - navigation.instant
+  features:
+    - content.code.copy
   logo: images/oppkey_logo.jpg
   favicon: images/oppkey_logo.jpg
 repo_name: git@github.com:theta360developers/ricoh-viewer.git
@@ -19,6 +19,7 @@ nav:
   - Contact: contact.md
   - Python Flask: python.md
   - Tutorial: tutorial.md
+  - Alternative Tutorial: tutorial2.md
   - RICOH360 Cloud API: cloudapi.md
 
 plugins:
@@ -32,3 +33,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - admonition
+  - pymdownx.details
