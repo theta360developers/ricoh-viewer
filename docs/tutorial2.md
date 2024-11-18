@@ -367,20 +367,21 @@ and connection with the powerful RICOH360 Cloud APIs.
 
 ## bonus challenges
 
-### change image
-
-There are two workflows for this challenge section:
+There are two workflows for challenges:
 
 1: you are using a Python script supplied to you in a zipped
 file with general testing Client ID, Client Secret and Private Key included
-in the Python Script.  This account is pre-loaded with sample images.
+in the Python Script.  This account is pre-loaded with many sample images. Jump
+straight to the _change image_ challenge.
 
 or
 
-2: you are using the credentials specific to your company. If you are
+2: you are using credentials specific to your company. If you are
 using the credentials specific to your company, you must first
 load multiple images into your RICOH360 Cloud account using
 the RICOH Content API.
+
+### change image
 
 In `server.py` file, change the number of images you get from the
 RICOH360 Cloud server from 1 to 5.
