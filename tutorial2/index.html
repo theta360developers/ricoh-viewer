@@ -1,0 +1,1503 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Oppkey">
+      
+      
+        <link rel="canonical" href="https://theta360developers.github.io/ricoh-viewer/tutorial2/">
+      
+      
+        <link rel="prev" href="../tutorial/">
+      
+      
+        <link rel="next" href="../cloudapi/">
+      
+      
+      <link rel="icon" href="../images/oppkey_logo.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Alternative Tutorial - Oppkey RICOH Viewer Demo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#alternate-tutorial-for-minimal-application" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Oppkey RICOH Viewer Demo" class="md-header__button md-logo" aria-label="Oppkey RICOH Viewer Demo" data-md-component="logo">
+      
+  <img src="../images/oppkey_logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Oppkey RICOH Viewer Demo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Alternative Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Oppkey RICOH Viewer Demo" class="md-nav__button md-logo" aria-label="Oppkey RICOH Viewer Demo" data-md-component="logo">
+      
+  <img src="../images/oppkey_logo.jpg" alt="logo">
+
+    </a>
+    Oppkey RICOH Viewer Demo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demo Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Alternative Tutorial
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Alternative Tutorial
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-virtual-environment-on-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up a virtual environment on Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewer-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewer Token
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewer Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-pyjwt-and-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      install PyJWT and cryptography
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-serverpy-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create server.py file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-serverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      run server.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-contentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements for contentId
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      install requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-request-to-aws-cognito-for-ricoh360-cloud-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make request to AWS Cognito for RICOH360 Cloud token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-ricoh360-cloud-token-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test RICOH360 Cloud Token Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cloud-token-to-get-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cloud Token to Get Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-contents-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test contents API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse-content_id-from-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      parse content_id from JSON
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-serverpy-and-indexhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect server.py and index.html
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect server.py and index.html">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-serverpy-create-route-to-indexhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      in server.py create route to index.html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-flask-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start flask server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      run application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      bonus challenges
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bonus challenges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      change image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhance-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      enhance image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      annotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing" class="md-nav__link">
+    <span class="md-ellipsis">
+      drawing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      split-screen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-of-right-pane" class="md-nav__link">
+    <span class="md-ellipsis">
+      control of right pane
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloudapi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RICOH360 Cloud API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-virtual-environment-on-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up a virtual environment on Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewer-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewer Token
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewer Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-pyjwt-and-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      install PyJWT and cryptography
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-serverpy-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create server.py file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-serverpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      run server.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-contentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements for contentId
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      install requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-request-to-aws-cognito-for-ricoh360-cloud-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make request to AWS Cognito for RICOH360 Cloud token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-ricoh360-cloud-token-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test RICOH360 Cloud Token Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cloud-token-to-get-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cloud Token to Get Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-contents-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test contents API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse-content_id-from-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      parse content_id from JSON
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-serverpy-and-indexhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect server.py and index.html
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect server.py and index.html">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-serverpy-create-route-to-indexhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      in server.py create route to index.html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-flask-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start flask server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      run application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      bonus challenges
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bonus challenges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      change image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhance-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      enhance image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      annotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing" class="md-nav__link">
+    <span class="md-ellipsis">
+      drawing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      split-screen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-of-right-pane" class="md-nav__link">
+    <span class="md-ellipsis">
+      control of right pane
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="alternate-tutorial-for-minimal-application">Alternate Tutorial for Minimal Application</h1>
+<p>The RICOH360 Viewer requires two things to start:</p>
+<ol>
+<li>token for viewer</li>
+<li>contentId for the image you want to show</li>
+</ol>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// instantiate viewer object</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RICOH360Viewer</span><span class="p">({</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nx">divId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewer&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="hll"><span class="w">    </span><span class="nx">onFetchToken</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+</span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">// start viewer with content</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nx">viewer</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="hll"><span class="w">    </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span>
+</span></span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">});</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="setting-up-a-virtual-environment-on-python">Setting up a virtual environment on Python</h2>
+<p>Although not required, I recommend that you set up a virtual
+environment on Python.  This avoids conflicting libraries on your main system
+Python.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python -m venv venv
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>source venv/bin/activate
+</span></code></pre></div>
+<p>You should now see a <code>(venv)</code> prompt.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(venv) craig@craigs-air practice %
+</span></code></pre></div>
+<div class="admonition tip inline end">
+<p class="admonition-title">Tip</p>
+<p>The Private Key and the Client Secret are not the same.  You must
+get the Client ID, Client Secret, and Private Key from RICOH.  The
+Private Key is for the Viewer.  The Client Secret is for the content.</p>
+</div>
+<h2 id="viewer-token">Viewer Token</h2>
+<p>To generate the viewer token, you need the following:</p>
+<ol>
+<li>Client ID</li>
+<li>Private Key</li>
+</ol>
+<p>We will use PyJWT and cryptography to generate the viewer token with the Private Key.</p>
+<h3 id="install-pyjwt-and-cryptography">install PyJWT and cryptography</h3>
+<p>PyJWT is needed to generate the JSON Web Token that the
+viewer needs.  The cryptography package is needed for the
+RS256 encryption used to encode the token.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install PyJWT cryptography
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can check the Python packages installed in your environment
+with <code>pip freeze</code></p>
+</div>
+<h3 id="create-serverpy-file">Create <code>server.py</code> file</h3>
+<p>Use VSCode or equivalent to create a file, <code>server.py</code>.</p>
+<p>At the top, include <code>import jwt</code>.</p>
+<p>Below the import, add your <code>PRIVATE_KEY</code> and <code>CLIENT_ID</code>.
+The Private Key is long.  Put it in triple quotes.</p>
+<p><img alt="private key" src="../images/tutorial2/private_key.png" /></p>
+<p>The Client ID is shorter.</p>
+<p><img alt="client id" src="../images/tutorial2/client_id.png" /></p>
+<p>With the <code>CLIENT_ID</code> and <code>PRIVATE_KEY</code> set in your Python
+script, you can now generate the token for the RICOH360 Viewer.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">server.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="c1"># generate token for RICOH360 Viewer</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="n">CLIENT_ID</span><span class="p">}</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="n">token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">PRIVATE_KEY</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;RS256&quot;</span><span class="p">)</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;token for RICOH360 Viewer: </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="run-serverpy">run <code>server.py</code></h3>
+<p>Test the RICOH360 Viewer token creation by running
+<code>python server.py</code>.</p>
+<p>Expected output is shown below.  The token is shortened
+in the example.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python server.py              
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>token for RICOH360 Viewer: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.XE4c2tlamFtaTQzbmZqcWM3YjhwNGxjcXAifQ...
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>...
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>...
+</span></code></pre></div>
+<h2 id="content-id">Content ID</h2>
+<p>We can now instantiate the viewer.  However, we won't be able to
+see any image in the viewer until we supply it with a contentId.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// instantiate viewer object</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RICOH360Viewer</span><span class="p">({</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="nx">divId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewer&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nx">onFetchToken</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">});</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">// start viewer with content</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="nx">viewer</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="hll"><span class="w">    </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span>
+</span></span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="p">});</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="requirements-for-contentid">Requirements for contentId</h3>
+<p>You need the following to get a contentId:</p>
+<ol>
+<li>RICOH THETA images loaded up into your account on the RICOH360 Cloud</li>
+<li>RICOH360 Cloud token generated with AWS Cognito</li>
+</ol>
+<p>In addition to the requirements above, you also need the following from RICOH
+to generate a RICOH360 Cloud token.</p>
+<ol>
+<li>Client ID</li>
+<li>Client Secret</li>
+</ol>
+<p>The Client ID is the same ID used to generate the RICOH360 Viewer token.</p>
+<p>Add the <code>CLIENT_SECRET</code> below the <code>CLIENT_ID</code> in your <code>server.py</code> file.</p>
+<p><img alt="client secret" src="../images/tutorial2/client_secret.png" /></p>
+<h3 id="install-requests">install requests</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip install requests
+</span></code></pre></div>
+<p>Import requests and base64 in your <code>server.py</code> file.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">server.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">jwt</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kn">import</span> <span class="nn">requests</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kn">import</span> <span class="nn">base64</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">PRIVATE_KEY</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;-----BEGIN PRIVATE KEY-----</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="s2">...</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="s2">...</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="make-request-to-aws-cognito-for-ricoh360-cloud-token">Make request to AWS Cognito for RICOH360 Cloud token</h3>
+<p>Use this code to get the RICOH360 Cloud token.  Place it at the bottom of
+your <code>server.py</code> file</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">server.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-42">42</a></span>
+<span class="normal"><a href="#__codelineno-9-43">43</a></span>
+<span class="normal"><a href="#__codelineno-9-44">44</a></span>
+<span class="normal"><a href="#__codelineno-9-45">45</a></span>
+<span class="normal"><a href="#__codelineno-9-46">46</a></span>
+<span class="normal"><a href="#__codelineno-9-47">47</a></span>
+<span class="normal"><a href="#__codelineno-9-48">48</a></span>
+<span class="normal"><a href="#__codelineno-9-49">49</a></span>
+<span class="normal"><a href="#__codelineno-9-50">50</a></span>
+<span class="normal"><a href="#__codelineno-9-51">51</a></span>
+<span class="normal"><a href="#__codelineno-9-52">52</a></span>
+<span class="normal"><a href="#__codelineno-9-53">53</a></span>
+<span class="normal"><a href="#__codelineno-9-54">54</a></span>
+<span class="normal"><a href="#__codelineno-9-55">55</a></span>
+<span class="normal"><a href="#__codelineno-9-56">56</a></span>
+<span class="normal"><a href="#__codelineno-9-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42"></a><span class="c1"># generate token for RICOH360 Cloud API</span>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43"></a><span class="c1"># Endpoint and authentication for AWS token</span>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44"></a><span class="n">token_endpoint</span> <span class="o">=</span> <span class="s2">&quot;https://saas-prod.auth.us-west-2.amazoncognito.com/oauth2/token&quot;</span>  <span class="c1"># noqa: E501</span>
+</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45"></a><span class="n">auth</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CLIENT_ID</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">CLIENT_SECRET</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># noqa: E501</span>
+</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-9-47"><a id="__codelineno-9-47" name="__codelineno-9-47"></a>    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
+</span><span id="__span-9-48"><a id="__codelineno-9-48" name="__codelineno-9-48"></a>    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Basic </span><span class="si">{</span><span class="n">auth</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+</span><span id="__span-9-49"><a id="__codelineno-9-49" name="__codelineno-9-49"></a><span class="p">}</span>
+</span><span id="__span-9-50"><a id="__codelineno-9-50" name="__codelineno-9-50"></a><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;grant_type&quot;</span><span class="p">:</span> <span class="s2">&quot;client_credentials&quot;</span><span class="p">,</span> <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;all/read&quot;</span><span class="p">}</span>
+</span><span id="__span-9-51"><a id="__codelineno-9-51" name="__codelineno-9-51"></a>
+</span><span id="__span-9-52"><a id="__codelineno-9-52" name="__codelineno-9-52"></a><span class="c1"># Request AWS token</span>
+</span><span id="__span-9-53"><a id="__codelineno-9-53" name="__codelineno-9-53"></a><span class="n">token_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">token_endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+</span><span id="__span-9-54"><a id="__codelineno-9-54" name="__codelineno-9-54"></a><span class="n">token_object</span> <span class="o">=</span> <span class="n">token_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span><span id="__span-9-55"><a id="__codelineno-9-55" name="__codelineno-9-55"></a><span class="n">ricoh_cloud_access_token</span> <span class="o">=</span> <span class="n">token_object</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;access_token&quot;</span><span class="p">)</span>
+</span><span id="__span-9-56"><a id="__codelineno-9-56" name="__codelineno-9-56"></a><span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span>
+</span><span id="__span-9-57"><a id="__codelineno-9-57" name="__codelineno-9-57"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RICOH360 Cloud Token</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">ricoh_cloud_access_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="test-ricoh360-cloud-token-creation">Test RICOH360 Cloud Token Creation</h3>
+<p>Run <code>python server.py</code> to test the RICOH360 Cloud token creation.</p>
+<p>You should see your two tokens printed to the console.</p>
+<p><img alt="tokens" src="../images/tutorial2/tokens.png" /></p>
+<p>Congratulations.  Now that you have the two tokens, you're almost
+done with the setup.  You just need to get a Content ID for the image
+you want to display.</p>
+<h3 id="use-cloud-token-to-get-content">Use Cloud Token to Get Content</h3>
+<p>Remember that our goal is to send a <code>contentId</code> to the HTML file that will
+display the image.  Prior to building the HTML page, we are getting
+the content ID to send to the HTML file.</p>
+<p>Although we are only building the <code>server.py</code> file at this point, let's
+look at the JavaScript snippet again to understand our goal.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1">// instantiate viewer object</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RICOH360Viewer</span><span class="p">({</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="nx">divId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewer&quot;</span><span class="p">,</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="nx">onFetchToken</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">});</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1">// start viewer with content</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nx">viewer</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="hll"><span class="w">    </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span>
+</span></span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">});</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Now that goal of the Python server code is top in your mind,
+let's move back to our Python file and focus on achieving
+the goal of getting a <code>contentId</code> that we can pass to the
+viewer in the <code>index.html</code> file.</p>
+<p>Add this code to the bottom of your <code>server.py</code> file.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">server.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-60">60</a></span>
+<span class="normal"><a href="#__codelineno-11-61">61</a></span>
+<span class="normal"><a href="#__codelineno-11-62">62</a></span>
+<span class="normal"><a href="#__codelineno-11-63">63</a></span>
+<span class="normal"><a href="#__codelineno-11-64">64</a></span>
+<span class="normal"><a href="#__codelineno-11-65">65</a></span>
+<span class="normal"><a href="#__codelineno-11-66">66</a></span>
+<span class="normal"><a href="#__codelineno-11-67">67</a></span>
+<span class="normal"><a href="#__codelineno-11-68">68</a></span>
+<span class="normal"><a href="#__codelineno-11-69">69</a></span>
+<span class="normal"><a href="#__codelineno-11-70">70</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-60"><a id="__codelineno-11-60" name="__codelineno-11-60"></a><span class="c1"># get content from RICOH360 Cloud server</span>
+</span><span id="__span-11-61"><a id="__codelineno-11-61" name="__codelineno-11-61"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start process to contact RICOH360 Cloud server to get content&quot;</span><span class="p">)</span>
+</span><span id="__span-11-62"><a id="__codelineno-11-62" name="__codelineno-11-62"></a><span class="c1"># Fetch content using the token</span>
+</span><span id="__span-11-63"><a id="__codelineno-11-63" name="__codelineno-11-63"></a><span class="n">content_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">ricoh_cloud_access_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span id="__span-11-64"><a id="__codelineno-11-64" name="__codelineno-11-64"></a><span class="n">content_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+</span><span id="__span-11-65"><a id="__codelineno-11-65" name="__codelineno-11-65"></a>    <span class="s2">&quot;https://api.ricoh360.com/contents?limit=1&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">content_headers</span>
+</span><span id="__span-11-66"><a id="__codelineno-11-66" name="__codelineno-11-66"></a><span class="p">)</span>
+</span><span id="__span-11-67"><a id="__codelineno-11-67" name="__codelineno-11-67"></a><span class="n">content_data</span> <span class="o">=</span> <span class="n">content_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span><span id="__span-11-68"><a id="__codelineno-11-68" name="__codelineno-11-68"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;got response from RICOH360 Cloud server&quot;</span><span class="p">)</span>
+</span><span id="__span-11-69"><a id="__codelineno-11-69" name="__codelineno-11-69"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RICOH360 Cloud Content&quot;</span><span class="p">)</span>
+</span><span id="__span-11-70"><a id="__codelineno-11-70" name="__codelineno-11-70"></a><span class="nb">print</span><span class="p">(</span><span class="n">content_data</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="test-contents-api">Test contents API</h3>
+<p>run <code>python server.py</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make sure you have content in your RICOH360 Cloud account.</p>
+</div>
+<p>You should see the content listing.</p>
+<p><img alt="content listing" src="../images/tutorial2/content_list.png" /></p>
+<p>In most editors, you can also click on the link to the thumbnail. On a Mac,
+I am using CMD-click.</p>
+<p><img alt="thumbnail" src="../images/tutorial2/thumbnail.png" /></p>
+<h3 id="parse-content_id-from-json">parse content_id from JSON</h3>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">server.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-72">72</a></span>
+<span class="normal"><a href="#__codelineno-12-73">73</a></span>
+<span class="normal"><a href="#__codelineno-12-74">74</a></span>
+<span class="normal"><a href="#__codelineno-12-75">75</a></span>
+<span class="normal"><a href="#__codelineno-12-76">76</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-72"><a id="__codelineno-12-72" name="__codelineno-12-72"></a><span class="c1"># parse content_id</span>
+</span><span id="__span-12-73"><a id="__codelineno-12-73" name="__codelineno-12-73"></a><span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span>
+</span><span id="__span-12-74"><a id="__codelineno-12-74" name="__codelineno-12-74"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get content_id from data&quot;</span><span class="p">)</span>
+</span><span id="__span-12-75"><a id="__codelineno-12-75" name="__codelineno-12-75"></a><span class="n">content_id</span> <span class="o">=</span> <span class="n">content_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;content_id&quot;</span><span class="p">]</span>
+</span><span id="__span-12-76"><a id="__codelineno-12-76" name="__codelineno-12-76"></a><span class="nb">print</span><span class="p">(</span><span class="n">content_id</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>You should see this output on the console.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>========
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Get content_id from data
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>c6eac34b-9bdc-4ba1-81af-29470fdead79
+</span></code></pre></div>
+<h2 id="html-file">HTML File</h2>
+<p>Now that we have the <code>contentId</code> and the viewer <code>token</code>, we
+can now create the HTML file that will hold the browser.</p>
+<p>In a new index.html file, put the following code:</p>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.html</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span>
+<span class="normal"><a href="#__codelineno-14-24">24</a></span>
+<span class="normal"><a href="#__codelineno-14-25">25</a></span>
+<span class="normal"><a href="#__codelineno-14-26">26</a></span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://r360pf-prod-static.s3.us-west-2.amazonaws.com/viewer/v0.15.0/ricoh360-viewer.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>    <span class="p">&lt;</span><span class="nt">div</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a>      <span class="na">style</span><span class="o">=</span><span class="s">&quot;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="s">        position: relative;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="s">        width: 100%;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="s">        height: 650px;</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="s">        background-color: #2a303c;</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="s">      &quot;</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a>    <span class="p">&gt;</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RICOH360Viewer</span><span class="p">({</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="w">        </span><span class="nx">divId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewer&quot;</span><span class="p">,</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="w">        </span><span class="nx">onFetchToken</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="w">      </span><span class="p">});</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="w">      </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">        </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span><span class="p">,</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">      </span><span class="p">});</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="connect-serverpy-and-indexhtml">Connect <code>server.py</code> and <code>index.html</code></h2>
+<p>We just need to connect the backend <code>server.py</code> file
+with the frontend <code>index.html</code> file.  To connect
+the files, we will use Flask.</p>
+<p><code>pip install Flask</code></p>
+<p>In the <code>server.py</code> file, import the Flask packages.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">server.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Specify how to start Flask and let the application know
+that the <code>index.html</code> file is in the same folder as the <code>server.py</code>
+file.</p>
+<p>Below the section where you specified <code>CLIENT_SECRET</code>.</p>
+<div class="language-python highlight"><span class="filename">server.py</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">app</span><span class="o">.</span><span class="n">template_folder</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
+</span></code></pre></div>
+<h3 id="in-serverpy-create-route-to-indexhtml">in <code>server.py</code> create route to <code>index.html</code></h3>
+<p>At the bottom of your <code>server.py</code> file, add the route to <code>index.html</code></p>
+<div class="language-python highlight"><span class="filename">server.py</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;contentId: </span><span class="si">{</span><span class="n">content_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span>  <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">contentId</span><span class="o">=</span><span class="n">content_id</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="start-flask-server">start flask server</h3>
+<p>At the bottom of <code>server.py</code>, add this:</p>
+<div class="language-python highlight"><span class="filename">server.py</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Open browser at http://localhost:3000 or http://127.0.0.1:3000&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="run-application">run application</h2>
+<p><code>python server.py</code></p>
+<p><img alt="open browser console" src="../images/tutorial2/open_browser.png" /></p>
+<p><img alt="browser" src="../images/tutorial2/browser.png" /></p>
+<p>Congratulations!  You have now configured the RICOH360 Viewer.</p>
+<p>Please see the other tutorials for customization of the browser
+and connection with the powerful RICOH360 Cloud APIs.</p>
+<h2 id="bonus-challenges">bonus challenges</h2>
+<p>There are two workflows for challenges:</p>
+<p>1: you are using a Python script supplied to you in a zipped
+file with general testing Client ID, Client Secret and Private Key included
+in the Python Script.  This account is pre-loaded with many sample images. Jump
+straight to the <em>change image</em> challenge.</p>
+<p>or</p>
+<p>2: you are using credentials specific to your company. If you are
+using the credentials specific to your company, you must first
+load multiple images into your RICOH360 Cloud account using
+the RICOH Content API.</p>
+<h3 id="change-image">change image</h3>
+<p>In <code>server.py</code> file, change the number of images you get from the
+RICOH360 Cloud server from 1 to 5.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">content_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="s2">&quot;https://api.ricoh360.com/contents?limit=5&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">content_headers</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>When you get the <code>content_id</code>, change the index of the content from 0 to 1.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">content_id</span> <span class="o">=</span> <span class="n">content_data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;content_id&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>reload browser.</p>
+<p>You should see the next image.</p>
+<p><img alt="browser image 2" src="../images/tutorial2/browser_image2.png" /></p>
+<p>Change the index to 2.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">content_id</span> <span class="o">=</span> <span class="n">content_data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;content_id&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Reload the browser to see the next image.</p>
+<p><img alt="image 3" src="../images/tutorial2/browser_image_3.png" /></p>
+<h3 id="enhance-image">enhance image</h3>
+<p>In <code>index.html</code>, apply <code>transform: 'enhancement'</code> below
+the contentId.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nx">viewer</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;enhancement&#39;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>The image is now enhanced.</p>
+<p><img alt="enhancement" src="../images/tutorial2/enhancement.png" /></p>
+<h3 id="annotation">annotation</h3>
+<p>Set up a constant for the viewer ui.  In the toolbar,
+add the annotation button.</p>
+<p>Place the <code>ui</code> constant after the <code>onFetchToken</code> callback.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-21">21</a></span>
+<span class="normal"><a href="#__codelineno-23-22">22</a></span>
+<span class="normal"><a href="#__codelineno-23-23">23</a></span>
+<span class="normal"><a href="#__codelineno-23-24">24</a></span>
+<span class="normal"><a href="#__codelineno-23-25">25</a></span>
+<span class="normal"><a href="#__codelineno-23-26">26</a></span>
+<span class="normal"><a href="#__codelineno-23-27">27</a></span>
+<span class="normal"><a href="#__codelineno-23-28">28</a></span>
+<span class="normal"><a href="#__codelineno-23-29">29</a></span>
+<span class="normal"><a href="#__codelineno-23-30">30</a></span>
+<span class="normal"><a href="#__codelineno-23-31">31</a></span>
+<span class="normal"><a href="#__codelineno-23-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22"></a><span class="w">  </span><span class="nx">toolbar</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23"></a><span class="w">    </span><span class="nx">annotationButton</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24"></a><span class="w">      </span><span class="nx">isHidden</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27"></a><span class="p">}</span>
+</span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RICOH360Viewer</span><span class="p">({</span>
+</span><span id="__span-23-29"><a id="__codelineno-23-29" name="__codelineno-23-29"></a><span class="w">  </span><span class="nx">divId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewer&quot;</span><span class="p">,</span>
+</span><span id="__span-23-30"><a id="__codelineno-23-30" name="__codelineno-23-30"></a><span class="w">  </span><span class="nx">onFetchToken</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+</span><span id="__span-23-31"><a id="__codelineno-23-31" name="__codelineno-23-31"></a><span class="hll"><span class="w">  </span><span class="nx">ui</span>
+</span></span><span id="__span-23-32"><a id="__codelineno-23-32" name="__codelineno-23-32"></a><span class="p">});</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="annotation" src="../images/tutorial2/annotation.png" /></p>
+<h3 id="drawing">drawing</h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nx">toolbar</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="nx">annotationButton</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">      </span><span class="nx">isHidden</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="nx">drawingButton</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">      </span><span class="nx">isHidden</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><img alt="drawing" src="../images/tutorial2/drawing.png" /></p>
+<h3 id="split-screen">split-screen</h3>
+<p>The split-screen control is in the <code>verticalPanel</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nx">toolbar</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nx">annotationButton</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">      </span><span class="nx">isHidden</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="nx">drawingButton</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">      </span><span class="nx">isHidden</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">  </span><span class="nx">verticalPanel</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">    </span><span class="nx">isHidden</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">    </span><span class="nx">topMargin</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><img alt="split-screen" src="../images/tutorial2/split-screen.png" /></p>
+<h3 id="control-of-right-pane">control of right pane</h3>
+<p><img alt="right pane enhance" src="../images/tutorial2/right-pane-enhance.png" /></p>
+<ol>
+<li>change <code>viewer.start</code> to delete the transform</li>
+<li>create a function to switch scene</li>
+<li>in the function, add the pane "1", which is the right pane</li>
+<li>create a button to run the function to switch the scene</li>
+</ol>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RICOH360Viewer</span><span class="p">({</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nx">divId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewer&quot;</span><span class="p">,</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nx">onFetchToken</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;{{token}}&quot;</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="nx">ui</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">  </span><span class="p">});</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nx">viewer</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">  </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span><span class="p">,</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="hll"><span class="w">  </span><span class="c1">// delete the transform line here</span>
+</span></span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="p">});</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">enhanceRightPane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="hll"><span class="w">  </span><span class="nx">viewer</span><span class="p">.</span><span class="nx">switchScene</span><span class="p">(</span>
+</span></span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="hll"><span class="w">  </span><span class="p">{</span>
+</span></span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="hll"><span class="w">    </span><span class="nx">contentId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{contentId}}&quot;</span><span class="p">,</span>
+</span></span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="hll"><span class="w">    </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;enhancement&#39;</span>
+</span></span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="hll"><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+</span></span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="hll"><span class="w">  </span><span class="p">);</span>
+</span></span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Below the viewer, add this:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;enhanceRightPane()&quot;</span><span class="p">&gt;</span>enhance right<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
