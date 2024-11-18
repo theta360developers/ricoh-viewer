@@ -498,11 +498,12 @@ const ui = {
 
 ![right pane enhance](images/tutorial2/right-pane-enhance.png)
 
+1. change `viewer.start` to delete the transform
 1. create a function to switch scene
 1. in the function, add the pane "1", which is the right pane
 1. create a button to run the function to switch the scene
 
-```javascript
+```javascript hl_lines="8 10-16"
 const viewer = new RICOH360Viewer({
     divId: "viewer",
     onFetchToken: () => "{{token}}",
@@ -510,6 +511,7 @@ const viewer = new RICOH360Viewer({
   });
 viewer.start({
   contentId: "{{contentId}}",
+  // delete the transform line here
 });
 const enhanceRightPane = () => {
   viewer.switchScene(
